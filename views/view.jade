@@ -1,0 +1,19 @@
+extends layout
+
+block body
+  body.is-loading
+    .loading Loading...
+    .compose-view
+      .header
+        img.branding(src='/img/mathogram.png')
+      a.action-share.button-pink(href='/') make your own math-o-gram
+        i.dcg-icon-chevron-right
+      .messages
+        textarea(disabled='disabled').message
+        input(type='text', disabled='disabled').from
+      .graph-paper
+      .about
+        p Made with love by Desmos <a href='/about'>Learn More</a>
+
+block scripts
+  script(src='/js/view.js')

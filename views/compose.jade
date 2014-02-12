@@ -1,0 +1,77 @@
+extends layout
+
+block body
+  body.is-loading
+    .loading Loading...
+      img.spinner(src='/img/wreath.gif')
+    .compose-view
+      .header
+        img.branding(src='/img/mathogram.png')
+        .images
+          img.button.selected(name='heart', src='/img/heart_thumb.png')
+          img.button(name='flower', src='/img/flower_thumb.png')
+          img.button(name='dancing', src='/img/dancing_thumb.png')
+          img.button(name='broken', src='/img/broken_thumb.png')
+          img.button(name='love', src='/img/love_thumb.png')
+      .action-share.button-pink share
+        i.dcg-icon-chevron-right
+      .messages
+        textarea.message(placeholder="Your message here...", autocomplete="off")
+        input.from(type='text', placeholder="Sign your name", autocomplete="off")
+      .graph-paper
+      .about
+        p Made with love by Desmos. <a href='/about'>Learn More.</a>
+
+
+    .share-view
+      .header
+        img.branding(src='/img/mathogram.png')
+        .action-create-another.button-pink create another
+          i.dcg-icon-chevron-right
+
+      .main
+        .share Share your math-o-gram!
+        img.envelope(src='/img/envelope.png')
+        .action-create-another.button-pink
+          i.dcg-icon-chevron-left
+          | create another
+
+        .share-form
+          label
+            p Share this link:
+            input(type='url' class='share-link' contenteditable='false')
+
+          .email-fields
+            label
+              p.error-message Error! Message not sent.
+              p.success-message Message delivered :)
+              p Email:
+              textarea(class='recipients', placeholder='Email addresses, separated by commas')
+            label
+              p From:
+              input(class='name', type='text', placeholder='Your name')
+            .send-btn.button-pink.action-send Send
+
+          .social-buttons
+            a(target='_blank').action-tweet.btn.tweet-btn
+              i.dcg-icon-twitter
+              | tweet
+            a(target='_blank').action-fb-post.btn.fb-post-btn
+              i.dcg-icon-facebook
+              | share
+
+        .about
+          p Made with love by Desmos. <a href='/about'>Learn More.</a>
+
+block scripts
+  script.
+    var handleClientLoad = function () {
+      gapi.client.setApiKey('AIzaSyA-yzbxob0Gnd0ovCQbwCvncbZkLauarsA');
+      gapi.client.load('urlshortener', 'v1',function(){
+        window.urlShortenerReady = true;
+      });
+    };
+
+  script(src="https://apis.google.com/js/client.js?onload=handleClientLoad")
+  script(src='/js/graph-templates.js')
+  script(src='/js/compose.js')

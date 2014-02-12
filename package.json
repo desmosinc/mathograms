@@ -1,0 +1,29 @@
+{
+  "name": "mathogram",
+  "version": "0.0.1",
+  "description": "The world's lightest weight Math-o-gram generator, from Desmos.com",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/desmosinc/collins.git"
+  },
+  "keywords": [
+    "I.",
+    "Heart.",
+    "Math."
+  ],
+  "author": "Desmos",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/desmosinc/collins/issues"
+  },
+  "homepage": "https://github.com/desmosinc/collins",
+  "dependencies": {
+    "express": "~3.4.8",
+    "jade": "~1.1.5",
+    "mandrill-api": "~1.0.39"
+  }
+}

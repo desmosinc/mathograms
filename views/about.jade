@@ -1,0 +1,21 @@
+extends layout
+
+block body
+  body.is-loading
+    .container
+      .header
+        img.branding(src='/img/mathogram.png')
+        a.action-share.button-pink(href='/') make your own math-o-gram
+          i.dcg-icon-chevron-right
+    .learn-more
+      .graph
+      .paragraphs
+        h1 About Math-o-grams
+        p We at <a href='http://www.desmos.com'>Desmos</a> believe that math is inherently beautiful and that Valentine's Day is a perfect opportunity for users to share the beauty of math.
+        p We've also been working on our very own <a href='https://www.desmos.com/api/v0.3/docs'>API</a> for the past year or so, and we thought this would be the perfect opportunity to show you how easy it is to put a Desmos graph into your own page, with all of the interactivity that you've come to love and expect from desmos.com, like moveable points (try it on the left, magic).
+        p If you want to make math-o-grams better, or just want to see how easy it is to embed Desmos into your app or website, head over to github, where we've open-sourced the whole project: <a href='https://github.com/desmosinc/mathograms' target='_blank'>https://github.com/desmosinc/mathograms</a>.
+
+      div(style="clear:both")
+
+block scripts
+  script(src='/js/about.js')

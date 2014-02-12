@@ -1,0 +1,14 @@
+.div(style="width: 600px; padding: 20px 20px 5px 20px; text-align: center; font-family: Helvetica, sans-serif; font-weight: 300; border:8px solid #ccc; margin: 0 auto;")
+  h1(style="font-weight: 300; font-size: 30px; margin: 20px; color: #888; padding: 0")
+    | #{subject}
+  a(href='#{url}')
+    img(src="http://#{host}/img/email_envelope.png", width='350px', height='350px')
+  div
+    a(href='#{url}', style='text-decoration: none; color: #4781b9') view your math-o-gram &raquo;
+  div(style="color: #888; width: 500px; margin: 30px auto") #{quote}
+  table(width="100%")
+    tr
+      td(align="left")
+        img(src='http://#{host}/img/logo_email.png', width='290px', height='50px')
+      td(align="right")
+        a(href='http://#{host}/', style='text-decoration: none; color: #4781b9') make your own mathogram &raquo;
