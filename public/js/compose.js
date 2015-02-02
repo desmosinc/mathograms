@@ -32,29 +32,32 @@
     desmosGraph.resize();
   };
 
+  var getLongUrl = function () {
+    var currentStateJSON = encodeURIComponent(JSON.stringify(desmosGraph.getState()));
+    var urlBase =  window.location.origin + '/view';
+    var message = encodeURIComponent($composeMessage.val());
+    var from = encodeURIComponent($composeFrom.val());
+    return urlBase.concat('?state=',currentStateJSON,'&message=',message,'&from=',from);
+  };
+
   //this is called once we have a short url from the google url-shortener
   var shareCallback = function(resp){
-    $shareLink.val(resp.id);
+    shareLink = resp.id || getLongUrl();
+    $shareLink.val(shareLink);
     var tweetUrl = "https://twitter.com/intent/tweet?text="
-                 + encodeURIComponent("For my math lovers: a Desmos Math-o-gram! " + resp.id)
+                 + encodeURIComponent("For my math lovers: a Desmos Math-o-gram! " + shareLink)
                  + "&via=desmos";
-    var fbUrl = 'http://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(resp.id);
+    var fbUrl = 'http://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(shareLink);
     $twitterLink.attr('href', tweetUrl);
     $facebookLink.attr('href', fbUrl);
-    lastSavedURL = resp.id;
+    lastSavedURL = shareLink;
     showShare();
   };
 
   //this initiates a request to google to shorten the url
   var share = function(){
     $body.addClass('is-loading');
-
-    //construct the longUrl
-    var currentStateJSON = encodeURIComponent(JSON.stringify(desmosGraph.getState()));
-    var urlBase =  window.location.origin + '/view';
-    var message = encodeURIComponent($composeMessage.val());
-    var from = encodeURIComponent($composeFrom.val());
-    var longUrl = urlBase.concat('?state=',currentStateJSON,'&message=',message,'&from=',from);
+    var longUrl = getLongUrl();
 
     //use the google api to shorten, and call googleCallback
     var r = gapi.client.urlshortener.url.insert({'resource':{'longUrl': longUrl}})
