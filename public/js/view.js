@@ -20,7 +20,7 @@ $(function() {
 
   //instantiate a desmos graph
   var graphPaper = $('.graph-paper')[0];
-  var desmosGraph = Desmos.Calculator(graphPaper, {menus: true});
+  var desmosGraph = Desmos.Calculator(graphPaper, {keypad: false, border: false});
   desmosGraph.setState(JSON.parse(queryParams.state));
 
   //write in the message

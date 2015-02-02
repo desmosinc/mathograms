@@ -101,7 +101,7 @@
   //Finally: let's execute some code!
   //First, instantiate a Desmos Graph
   var graphPaper = $('.graph-paper')[0];
-  var desmosGraph = Desmos.Calculator(graphPaper, {menus: true});
+  var desmosGraph = Desmos.Calculator(graphPaper, {keypad: false, border: false});
 
   //Hook up our listeners
   $('.action-share').on('click', share);
