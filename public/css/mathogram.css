@@ -313,6 +313,10 @@ body{
   margin-top: 30px;
 }
 
+.dcg-icon-twitter, .dcg-icon-facebook {
+  font-size: 13px;
+}
+
 .send-btn {
   background: #d28889;
 }
