@@ -121,7 +121,7 @@ body{
 .action-send {
   display: inline-block;
   margin: 4px 0;
-  padding: 8px 10px;
+  padding: 7px 10px 8px;
   font-size: 14px;
 }
 
@@ -211,7 +211,7 @@ body{
 }
 
 .compose-view .from {
-  bottom: 13px;
+  bottom: 20px;
   width: 500px;
   right: -442px;
   text-align: right;
@@ -285,14 +285,15 @@ body{
 
 .share-form .email-fields .success-message {
   position: absolute;
-  top: 130px;
+  top: 110px;
   width: 100%;
   text-align: center;
+  border-radius: 2px;
   color: #d68989;
   font-size: 32px;
   line-height: 1em;
   z-index: 10;
-  background: white;
+  background: #fff;
   font-family: 'Cookie', "Brush Script MT", cursive, sans-serif;
   display: none;
 }
@@ -310,6 +311,10 @@ body{
 
 .share-form .email-fields, .share-form .social-buttons {
   margin-top: 30px;
+}
+
+.dcg-icon-twitter, .dcg-icon-facebook {
+  font-size: 13px;
 }
 
 .send-btn {
