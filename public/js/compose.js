@@ -114,6 +114,6 @@
   $('.action-send').on('click', sendEmail);
 
   //set the state of the graph
-  selectGraph('heart');
+  selectGraph('sierpinski');
   $body.removeClass('is-loading');
 })()
