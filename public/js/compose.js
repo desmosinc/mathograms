@@ -109,8 +109,6 @@
   //Hook up our listeners
   $('.action-share').on('click', share);
   $('.action-create-another').on('click', showCompose)
-  $composeMessage.on('click', function() {this.select();});
-  $composeFrom.on('click', function() {this.select();});
   $shareLink.on('click', function() {this.select();});
   $('.button').on('click', clickToSetGraph);
   $('.action-send').on('click', sendEmail);
