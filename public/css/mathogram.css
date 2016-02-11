@@ -198,7 +198,7 @@ body{
 .compose-view .message {
   top: 20px;
   left: -80px;
-  width: 470px;
+  width: 520px;
   height: 100px;
   text-align: left;
 }
@@ -212,7 +212,7 @@ body{
 
 .compose-view .from {
   bottom: 20px;
-  width: 500px;
+  width: 520px;
   right: -442px;
   text-align: right;
 }

@@ -104,7 +104,13 @@
   //Finally: let's execute some code!
   //First, instantiate a Desmos Graph
   var graphPaper = $('.graph-paper')[0];
-  var desmosGraph = Desmos.Calculator(graphPaper, {keypad: false, border: false});
+  var options = {
+    keypad: false,
+    border: false,
+    settingsMenu: false,
+    zoomButtons: false
+  };
+  var desmosGraph = Desmos.Calculator(graphPaper, options);
 
   //Hook up our listeners
   $('.action-share').on('click', share);
