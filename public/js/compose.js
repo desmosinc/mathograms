@@ -37,7 +37,7 @@
     var urlBase =  window.location.origin + '/view';
     var message = encodeURIComponent($composeMessage.val());
     var from = encodeURIComponent($composeFrom.val());
-    return urlBase.concat('?state=',currentStateJSON,'&message=',message,'&from=',from);
+    return urlBase.concat('?message=',message,'&from=',from,'#',currentStateJSON);
   };
 
   //this is called once we have a short url from the google url-shortener

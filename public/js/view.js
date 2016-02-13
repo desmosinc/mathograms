@@ -4,7 +4,7 @@ $(function() {
 
   var parseUrl = function() {
     var queryParams = {};
-    var queryString = window.location.href.split('?')[1];
+    var queryString = window.location.search;
     var params = queryString.split('&');
     for (var i = 0; i < params.length; i++){
       var index = params[i].indexOf('=');
@@ -21,7 +21,10 @@ $(function() {
   //instantiate a desmos graph
   var graphPaper = $('.graph-paper')[0];
   var desmosGraph = Desmos.Calculator(graphPaper, {keypad: false, border: false});
-  desmosGraph.setState(JSON.parse(queryParams.state));
+  var state = queryParams.state;
+  if (!state && window.location.hash)
+    state = decodeURIComponent(window.location.hash.substr(1));
+  desmosGraph.setState(JSON.parse(state));
 
   //write in the message
   $('.message').val(queryParams.message);
