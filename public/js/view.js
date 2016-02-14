@@ -20,7 +20,15 @@ $(function() {
 
   //instantiate a desmos graph
   var graphPaper = $('.graph-paper')[0];
-  var desmosGraph = Desmos.Calculator(graphPaper, {keypad: false, border: false});
+
+  var options = {
+    keypad: false,
+    border: false,
+    settingsMenu: false,
+    zoomButtons: false
+  };
+
+  var desmosGraph = Desmos.Calculator(graphPaper, options);
   var state = queryParams.state;
   if (!state && window.location.hash)
     state = decodeURIComponent(window.location.hash.substr(1));
