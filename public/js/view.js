@@ -4,7 +4,7 @@ $(function() {
 
   var parseUrl = function() {
     var queryParams = {};
-    var queryString = window.location.search;
+    var queryString = window.location.search.substr(1);
     var params = queryString.split('&');
     for (var i = 0; i < params.length; i++){
       var index = params[i].indexOf('=');
