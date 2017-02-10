@@ -16,23 +16,10 @@ Quick Start Guide
 4. Run the app by typing: `node app.js`
 5. Visit http://localhost:5000 from your browser
 
-Using Mandrill Locally
---------------
-
-To get the full experience, including the ability to e-mail math-o-grams, you'll need to:
-
-1. get a key from the fine folks at Mandrill (www.mandrill.com).
-2. rename config.example.js to config.js, and enter the key in there
-
 Deploying
 ---------
 
 To deploy, you'll need to get an account set up with heroku and follow their instructions here: https://devcenter.heroku.com/articles/getting-started-with-nodejs
-
-In order to enable Mandrill, use the key from above, and set it as an environment variable by typing:
-```
-heroku config:set MANDRILL_KEY=[your key]
-```
 
 Making Your own Desmos Apps
 ---------
