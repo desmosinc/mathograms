@@ -23,7 +23,6 @@
   "homepage": "https://github.com/desmosinc/collins",
   "dependencies": {
     "express": "~3.4.8",
-    "jade": "~1.1.5",
-    "mandrill-api": "~1.0.39"
+    "jade": "~1.1.5"
   }
 }
