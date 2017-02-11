@@ -16,6 +16,8 @@
   var $body = $('body');
   var expressionKeys = Object.keys(graphTemplates);
 
+  var graphName = '';
+
   //move on to step 2 (share)
   var showShare = function () {
     $composeView.hide();
@@ -31,11 +33,10 @@
   };
 
   var getLongUrl = function () {
-    var currentStateJSON = encodeURIComponent(JSON.stringify(desmosGraph.getState()));
     var urlBase =  window.location.origin + '/view';
     var message = encodeURIComponent($composeMessage.val());
     var from = encodeURIComponent($composeFrom.val());
-    return urlBase.concat('?message=',message,'&from=',from,'#',currentStateJSON);
+    return urlBase.concat('?message=',message,'&from=',from,'&graph=',graphName);
   };
 
   //this is called once we have a short url from the google url-shortener
@@ -71,6 +72,7 @@
 
   var selectGraph = function(name){
     desmosGraph.setState(graphTemplates[name]);
+    graphName = name;
   };
 
   //Finally: let's execute some code!
