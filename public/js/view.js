@@ -29,10 +29,15 @@ $(function() {
   };
 
   var desmosGraph = Desmos.Calculator(graphPaper, options);
-  var state = queryParams.state;
-  if (!state && window.location.hash)
-    state = decodeURIComponent(window.location.hash.substr(1));
-  desmosGraph.setState(JSON.parse(state));
+  var state = {};
+  if (queryParams.graph) {
+    state = graphTemplates[queryParams.graph];
+  } else if (queryParams.state) {
+    state = JSON.parse(queryParams.state);
+  } else if (window.location.hash) {
+    state = JSON.parse(decodeURIComponent(window.location.hash.substr(1)));
+  }
+  desmosGraph.setState(state);
 
   //write in the message
   $('.message').val(queryParams.message);

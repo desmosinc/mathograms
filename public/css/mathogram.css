@@ -278,38 +278,12 @@ body{
   float: left;
 }
 
-.share-form .email-fields textarea {
+.share-form textarea {
   height: 3em;
   position: relative;
 }
 
-.share-form .email-fields .success-message {
-  position: absolute;
-  top: 110px;
-  width: 100%;
-  text-align: center;
-  border-radius: 2px;
-  color: #d68989;
-  font-size: 32px;
-  line-height: 1em;
-  z-index: 10;
-  background: #fff;
-  font-family: 'Cookie', "Brush Script MT", cursive, sans-serif;
-  display: none;
-}
-
-.share-form .email-fields .error-message {
-  position: absolute;
-  top: 130px;
-  width: 100%;
-  text-align: center;
-  color: red;
-  z-index: 20;
-  font-size: 20px;
-  display: none;
-}
-
-.share-form .email-fields, .share-form .social-buttons {
+.share-form .social-buttons {
   margin-top: 30px;
 }
 
@@ -370,7 +344,7 @@ body{
 .about {
   text-align: center;
   clear: both;
-  margin-top: 100px;
+  margin-top: 250px;
 }
 .about a {
   color: #fff;
