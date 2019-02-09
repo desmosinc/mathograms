@@ -23,7 +23,8 @@
   "homepage": "https://github.com/desmosinc/collins",
   "dependencies": {
     "body-parser": "^1.18.3",
-    "express": "^4.13.4",
+    "debug": "^4.1.1",
+    "express": "^4.16.4",
     "jade": "~1.1.5",
     "morgan": "^1.9.1"
   }
