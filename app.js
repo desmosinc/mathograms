@@ -7,7 +7,7 @@ var quotes = require('./math_quotes');
 var bodyParser = require('body-parser')
 
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+app.set('view engine', 'pug');
 app.use(express.static('public'));
 
 app.get('/', function(req, res) {
