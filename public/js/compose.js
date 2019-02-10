@@ -84,7 +84,7 @@
     settingsMenu: false,
     zoomButtons: false
   };
-  var desmosGraph = Desmos.Calculator(graphPaper, options);
+  var desmosGraph = Desmos.GraphingCalculator(graphPaper, options);
 
   //Hook up our listeners
   $('.action-share').on('click', share);

@@ -28,7 +28,7 @@ $(function() {
     zoomButtons: false
   };
 
-  var desmosGraph = Desmos.Calculator(graphPaper, options);
+  var desmosGraph = Desmos.GraphingCalculator(graphPaper, options);
   var state = {};
   if (queryParams.graph) {
     state = graphTemplates[queryParams.graph];
