@@ -39,8 +39,8 @@ $(function() {
   }
   desmosGraph.setState(state);
 
-  //write in the message
-  $('.message').val(queryParams.message);
-  $('.from').val(queryParams.from);
+  //write in the message. google url encoder is replacing spaces with pluses
+  $('.message').val(queryParams.message.replace(/\+/g, ' '));
+  $('.from').val(queryParams.from.replace(/\+/g, ' '));
   $('body').removeClass('is-loading');
 })
