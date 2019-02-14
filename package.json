@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/desmosinc/collins.git"
+    "url": "git://github.com/desmosinc/mathograms.git"
   },
   "keywords": [
     "I.",
@@ -18,9 +18,9 @@
   "author": "Desmos",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/desmosinc/collins/issues"
+    "url": "https://github.com/desmosinc/mathograms/issues"
   },
-  "homepage": "https://github.com/desmosinc/collins",
+  "homepage": "https://github.com/desmosinc/mathograms",
   "dependencies": {
     "express": "~3.4.8",
     "jade": "~1.1.5"
