@@ -44,7 +44,7 @@
     shareLink = resp.id || getLongUrl();
     $shareLink.val(shareLink);
     var tweetUrl = "https://twitter.com/intent/tweet?text="
-                 + encodeURIComponent("For my math lovers: a Desmos Math-o-gram! " + shareLink)
+                 + encodeURIComponent("For my math lovers: a Desmos #mathogram! " + shareLink)
                  + "&via=desmos";
     var fbUrl = 'http://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(shareLink);
     $twitterLink.attr('href', tweetUrl);
