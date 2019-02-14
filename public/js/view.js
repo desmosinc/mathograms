@@ -8,8 +8,8 @@ $(function() {
     var params = queryString.split('&');
     for (var i = 0; i < params.length; i++){
       var index = params[i].indexOf('=');
-      var key = decodeURIComponent(params[i].slice(0, index));
-      var value = decodeURIComponent(params[i].slice(index + 1));
+      var key = decodeURIComponent(params[i].slice(0, index).replace(/\+/g, ' '));
+      var value = decodeURIComponent(params[i].slice(index + 1).replace(/\+/g, ' '));
       queryParams[key] = value;
     }
     return queryParams
@@ -40,7 +40,7 @@ $(function() {
   desmosGraph.setState(state);
 
   //write in the message. google url encoder is replacing spaces with pluses
-  if (queryParams.message) $('.message').val(queryParams.message.replace(/\+/g, ' '));
-  if (queryParams.from) $('.from').val(queryParams.from.replace(/\+/g, ' '));
+  $('.message').val(queryParams.message);
+  $('.from').val(queryParams.from);
   $('body').removeClass('is-loading');
 })
