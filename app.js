@@ -4,11 +4,11 @@ var app = express();
 var path = require('path');
 
 var quotes = require('./math_quotes');
+var bodyParser = require('body-parser')
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 app.use(express.static('public'));
-app.use(express.bodyParser());
 
 app.get('/', function(req, res) {
   res.render('compose', {host: req.get('host')});
