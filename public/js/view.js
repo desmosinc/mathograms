@@ -40,7 +40,7 @@ $(function() {
   desmosGraph.setState(state);
 
   //write in the message. google url encoder is replacing spaces with pluses
-  $('.message').val(queryParams.message.replace(/\+/g, ' '));
-  $('.from').val(queryParams.from.replace(/\+/g, ' '));
+  if (queryParams.message) $('.message').val(queryParams.message.replace(/\+/g, ' '));
+  if (queryParams.from) $('.from').val(queryParams.from.replace(/\+/g, ' '));
   $('body').removeClass('is-loading');
 })
