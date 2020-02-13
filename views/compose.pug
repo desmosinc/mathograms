@@ -52,13 +52,4 @@ block body
           p Made with love by Desmos. <a href='/about'>Learn more.</a>
 
 block scripts
-  script.
-    var handleClientLoad = function () {
-      gapi.client.setApiKey('AIzaSyDziw2EnVl1Xw6Or3KXEc20YPOHq5j0gDM');
-      gapi.client.load('urlshortener', 'v1',function(){
-        window.urlShortenerReady = true;
-      });
-    };
-
-  script(src="//apis.google.com/js/client.js?onload=handleClientLoad")
   script(src='/js/compose.js')

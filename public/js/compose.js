@@ -40,8 +40,7 @@
   };
 
   //this is called once we have a short url from the google url-shortener
-  var shareCallback = function(resp){
-    shareLink = resp.id || getLongUrl();
+  var shareCallback = function(shareLink){
     $shareLink.val(shareLink);
     var tweetUrl = "https://twitter.com/intent/tweet?text="
                  + encodeURIComponent("For my math lovers: a Desmos #mathogram! " + shareLink)
@@ -53,14 +52,11 @@
     showShare();
   };
 
-  //this initiates a request to google to shorten the url
+  //TODO: hook up a new link shortener!
   var share = function(){
     $body.addClass('is-loading');
     var longUrl = getLongUrl();
-
-    //use the google api to shorten, and call googleCallback
-    var r = gapi.client.urlshortener.url.insert({'resource':{'longUrl': longUrl}})
-    r.execute(shareCallback);
+    shareCallback(longUrl);
   };
 
   //this is the code that interacts with the graphpaper
