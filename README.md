@@ -5,7 +5,7 @@ This is a little project by the folks at desmos.com to:
 * show the world how easy it is to use the Desmos API
 * let the math nerds and math nerd lovers send adorable valentine's day cards
 
-Try it out live at http://mathogram.desmos.com
+Try it out live at http://mathogram.com
 
 Quick Start Guide
 -------
