@@ -57,7 +57,12 @@
     var longUrl = getLongUrl();
 
     // shorten longUrl using TinyURL API
-    $.get("https://tinyurl.com/api-create.php?url=" + encodeURIComponent(longUrl)).done(shareCallback);
+    $.get("https://tinyurl.com/api-create.php?url=" + encodeURIComponent(longUrl))
+      .done(shareCallback)
+      .fail(function () {
+        // share longUrl if TinyURL API call fails
+        shareCallback(longUrl);
+      });
   };
 
   //this is the code that interacts with the graphpaper
