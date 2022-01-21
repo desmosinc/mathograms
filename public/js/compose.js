@@ -39,7 +39,7 @@
     return urlBase.concat('?message=',message,'&from=',from,'&graph=',graphName);
   };
 
-  //this is called once we have a short url from the google url-shortener
+  //this is called once we have a short url from the TinyURL
   var shareCallback = function(shareLink){
     $shareLink.val(shareLink);
     var tweetUrl = "https://twitter.com/intent/tweet?text="
@@ -52,11 +52,12 @@
     showShare();
   };
 
-  //TODO: hook up a new link shortener!
   var share = function(){
     $body.addClass('is-loading');
     var longUrl = getLongUrl();
-    shareCallback(longUrl);
+
+    // shorten longUrl using TinyURL API
+    $.get("https://tinyurl.com/api-create.php?url=" + encodeURIComponent(longUrl)).done(shareCallback);
   };
 
   //this is the code that interacts with the graphpaper
