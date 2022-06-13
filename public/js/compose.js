@@ -91,4 +91,5 @@
   //set the state of the graph
   selectGraph('sierpinski');
   $body.removeClass('is-loading');
+  if (line.js-isuser)
 })()
